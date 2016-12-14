@@ -40,11 +40,17 @@ function validateForm() {
   // validation age
 
   var userAge = document.forms[0].childNodes[0].value;
-  if (!userAge.match(/([1-9])/g)) {
+  if (!userAge.match(/([0-9])/g)) {
+    alert ("Your Age is invalid! Age must include only numbers!");
+    return validate = false;
+  } else if (userAge.match(/-/)) {
+    alert ("Your Age is invalid! Age should be more then  0!");
+    return validate = false;
+  } else if (userAge.match(/ /)) {
     alert ("Your Age is invalid! Age must include only numbers!");
     return validate = false;
   }
-
+  
   // validation username
 
   var userName = document.forms[0].childNodes[1].value;
